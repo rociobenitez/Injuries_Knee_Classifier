@@ -1,0 +1,29 @@
+# Ignore Python cache files in all directories
+__pycache__/
+**/__pycache__/
+*.pyc
+
+# Ignore Jupyter Notebook checkpoints in all directories
+.ipynb_checkpoints/
+**/.ipynb_checkpoints/
+
+
+# Ignore dataset file containing private information
+data/dataset_run.csv
+
+# Ignore all .pkl files except for specific ones
+*.pkl
+!src/models/random_forest_model.pkl
+
+# Ignore large result files that are not necessary to version control
+results/*.pdf
+results/*.docx
+
+# Ignore environment and IDE-specific files
+*.env
+.vscode/
+.idea/
+
+# Ignore system-specific files
+.DS_Store
+Thumbs.db
