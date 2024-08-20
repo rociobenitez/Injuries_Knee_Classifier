@@ -46,8 +46,8 @@ El modelo Random Forest fue elegido por su rendimiento, particularmente después
 
 - Predicciones correctas para sin lesión de rodilla: 12
 - Predicciones incorrectas para sin lesión de rodilla: 5
-- Predicciones correctas para lesión de rodilla: 13
-- Predicciones incorrectas para lesión de rodilla: 4
+- Predicciones correctas para lesión de rodilla: 12
+- Predicciones incorrectas para lesión de rodilla: 5
 
 ![Modelo de Clasificación de Lesiones de Rodilla](src/img/matriz-confusion-randomforestclassifier.png)
 ![Modelo de Clasificación de Lesiones de Rodilla](src/img/matriz-normalizada-randomforestclassifier.png)
@@ -91,3 +91,9 @@ El modelo fue entrenado con las siguientes características:
   - Prueba de Thomas para TFL
   - Genu Recurvatum
   - Prueba de Jack (No Reconstruido)
+
+## Nota sobre los Archivos de Datos
+
+Los archivos de la carpeta `data`, que incluyen el conjunto de datos `dataset_run.csv` y otros archivos relacionados, no han sido subidos a este repositorio debido a que contienen información propietaria del equipo de investigación de la Universidad San Jorge de Zaragoza (España). Estos datos son confidenciales y pertenecen a un proyecto de investigación en curso, por lo que no pueden ser compartidos públicamente.
+
+Si tienes interés en acceder a los datos o en colaborar con el equipo de investigación, te recomendamos ponerte en contacto directamente con la [Universidad San Jorge](https://www.usj.es/) para más información.
