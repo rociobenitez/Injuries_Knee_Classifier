@@ -2,7 +2,18 @@
 
 ## Descripción del Proyecto
 
-Este proyecto se centra en el desarrollo de un modelo predictivo para clasificar el riesgo de lesión de rodilla basado en datos biomecánicos. Después de evaluar múltiples modelos de clasificación, se seleccionó el clasificador Random Forest como el modelo más robusto y efectivo. El conjunto de datos, procesado a partir de diversas características biomecánicas, se utiliza para predecir si un individuo está en riesgo de sufrir una lesión de rodilla.
+Este proyecto es una **continuación del análisis inicial** realizado en el sistema predictivo para el riesgo de lesiones musculoesqueléticas. En esta segunda fase, el enfoque se centra específicamente en desarrollar un modelo predictivo para clasificar el riesgo de lesión de rodilla utilizando datos biomecánicos seleccionados.
+
+Después de evaluar múltiples modelos de clasificación, el **Random Forest** fue seleccionado como el modelo más robusto y efectivo tras un proceso de optimización con **GridSearchCV**. Los datos, procesados a partir de diversas características biomecánicas, permiten predecir si un individuo está en riesgo de sufrir una lesión de rodilla.
+
+Este trabajo amplía los resultados obtenidos en la fase inicial, la cual fue presentada en el **11º Congreso Conjunto AEA-SEROD** en Barcelona, destacando la integración de Machine Learning e inteligencia artificial en la biomecánica aplicada.
+
+## Contexto del Proyecto
+
+- **Fase 1:** Desarrollo inicial de un sistema predictivo integral para evaluar el riesgo de lesiones musculoesqueléticas y despliegue en Google Cloud Platform ([enlace al respositorio](https://github.com/rociobenitez/BiomechanicalRiskPrediction)).
+- **Fase 2:** Clasificación específica del riesgo de lesiones de rodilla con un enfoque optimizado en modelos predictivos.
+
+El proyecto ha sido reconocido en el ámbito científico y profesional, con una presentación en el Congreso AEA-SEROD. El [certificado de la ponencia](/src/pdf/240626-aea-serod2024-certificado-ponente-medico.pdf) se encuentra en la carpeta `src/pdf`.
 
 ## Modelos Evaluados
 
