@@ -2,56 +2,51 @@
 
 ## Descripción del Proyecto
 
-Este proyecto es una **continuación del análisis inicial** realizado en el sistema predictivo para el riesgo de lesiones musculoesqueléticas. En esta segunda fase, el enfoque se centra específicamente en desarrollar un modelo predictivo para clasificar el riesgo de lesión de rodilla utilizando datos biomecánicos seleccionados.
+Este proyecto representa la **segunda fase** de un sistema predictivo aplicado al ámbito clínico-deportivo, centrado en el desarrollo de un modelo de machine learning para **predecir el riesgo de lesión de rodilla** a partir de datos biomecánicos.
 
-Después de evaluar múltiples modelos de clasificación, el **Random Forest** fue seleccionado como el modelo más robusto y efectivo tras un proceso de optimización con **GridSearchCV**. Los datos, procesados a partir de diversas características biomecánicas, permiten predecir si un individuo está en riesgo de sufrir una lesión de rodilla.
+Tras evaluar múltiples algoritmos, el modelo **Random Forest** fue seleccionado por su robustez, interpretabilidad y rendimiento general, optimizado mediante **GridSearchCV** con validación cruzada.
 
-Este trabajo amplía los resultados obtenidos en la fase inicial, la cual fue presentada en el **11º Congreso Conjunto AEA-SEROD** en Barcelona, destacando la integración de Machine Learning e inteligencia artificial en la biomecánica aplicada.
+Este trabajo surge como evolución de la investigación inicial [presentada en el **11º Congreso Conjunto AEA-SEROD**](/src/pdf/240626-aea-serod2024-certificado-ponente-medico.pdf) (Barcelona), donde se abordó el riesgo global de lesiones musculoesqueléticas. En esta fase, el foco se centra exclusivamente en lesiones de rodilla, destacando la **aplicación práctica de la inteligencia artificial en biomecánica**.
 
 ## Contexto del Proyecto
 
-- **Fase 1:** Desarrollo inicial de un sistema predictivo integral para evaluar el riesgo de lesiones musculoesqueléticas y despliegue en Google Cloud Platform ([enlace al respositorio](https://github.com/rociobenitez/BiomechanicalRiskPrediction)).
-- **Fase 2:** Clasificación específica del riesgo de lesiones de rodilla con un enfoque optimizado en modelos predictivos.
+- **Fase 1:** Diseño y despliegue de un sistema predictivo para lesiones musculoesqueléticas generales ([ver repositorio](https://github.com/rociobenitez/BiomechanicalRiskPrediction)), incluyendo el uso de Google Cloud Platform.
+- **Fase 2:** Enfoque específico en la predicción de lesiones de rodilla mediante algoritmos de clasificación supervisada.
 
-El proyecto ha sido reconocido en el ámbito científico y profesional, con una presentación en el Congreso AEA-SEROD. El [certificado de la ponencia](/src/pdf/240626-aea-serod2024-certificado-ponente-medico.pdf) se encuentra en la carpeta `src/pdf`.
+Este proyecto ha sido **reconocido a nivel científico**, y ha contado con colaboración de equipos médicos y de investigación especializados.
 
 ## Modelos Evaluados
 
-Durante este proyecto se evaluaron varios modelos, incluyendo:
+Se evaluaron diferentes algoritmos de clasificación para determinar el más adecuado según criterios de precisión, recall y capacidad de generalización:
 
-- **Random Forest** (Modelo Seleccionado)
+- **Random Forest** _(seleccionado)_
 - Bagging Classifier
 - Decision Tree
 - Gradient Boosting Classifier
 - Voting Classifier
 
-El modelo Random Forest fue elegido por su rendimiento, particularmente después de su optimización utilizando GridSearchCV con validación cruzada de 10 pliegues.
+El modelo final fue optimizado mediante **GridSearchCV**, empleando validación cruzada con 10 pliegues.
 
 ## Resultados Clave
 
-- **Mejor puntuación promedio de validación cruzada**: 0.669
-- **Mejores Parámetros**:
+- **Puntuación media de validación cruzada**: 0.669
+- **Parámetros óptimos**:
   - `max_depth`: 6
   - `max_features`: 'log2'
   - `min_samples_leaf`: 1
   - `min_samples_split`: 2
-- **Precisión en el entrenamiento**: 0.9779
-- **Precisión en la prueba**: 0.7353
+- **Precisión entrenamiento**: 0.9779
+- **Precisión test**: 0.7353
 - **AUC-ROC**: 0.7612
 
-![Modelo de Clasificación de Lesiones de Rodilla](src/img/ROC-randomforestclassifier.png)
+![Curva ROC](src/img/ROC-randomforestclassifier.png)
 
 ### Métricas Detalladas:
 
-- **Precisión**:
-  - Sin Lesión de Rodilla: 0.75
-  - Lesión de Rodilla: 0.72
-- **Exhaustividad (Recall)**:
-  - Sin Lesión de Rodilla: 0.71
-  - Lesión de Rodilla: 0.76
-- **Puntuación F1**:
-  - Sin Lesión de Rodilla: 0.73
-  - Lesión de Rodilla: 0.74
+| Clase                 | Precisión | Recall | F1-score |
+| --------------------- | --------- | ------ | -------- |
+| Sin lesión de rodilla | 0.75      | 0.71   | 0.73     |
+| Lesión de rodilla     | 0.72      | 0.76   | 0.74     |
 
 ### Matriz de Confusión:
 
@@ -60,51 +55,24 @@ El modelo Random Forest fue elegido por su rendimiento, particularmente después
 - Predicciones correctas para lesión de rodilla: 12
 - Predicciones incorrectas para lesión de rodilla: 5
 
-![Modelo de Clasificación de Lesiones de Rodilla](src/img/matriz-confusion-randomforestclassifier.png)
-![Modelo de Clasificación de Lesiones de Rodilla](src/img/matriz-normalizada-randomforestclassifier.png)
+![Matriz de Confusión](src/img/matriz-confusion-randomforestclassifier.png)
+![Matriz Normalizada](src/img/matriz-normalizada-randomforestclassifier.png)
 
 ### Conclusión
 
-Después de un exhaustivo análisis y comparación, el modelo Random Forest demostró un rendimiento equilibrado entre precisión y capacidad de generalización, lo que lo convierte en la opción óptima para predecir el riesgo de lesión de rodilla.
+El modelo **Random Forest** ofreció el mejor equilibrio entre precisión y generalización en comparación con otros algoritmos evaluados, siendo especialmente efectivo para contextos clínicos en los que el **riesgo de lesión debe anticiparse con una base cuantificable y replicable**.
 
 ## Características Utilizadas
 
-El modelo fue entrenado con las siguientes características:
+Las variables utilizadas incluyen datos antropométricos, biomecánicos y clínicos. Algunas de las más relevantes:
 
-- **Datos Biomecánicos**:
-  - IMC
-  - Tasa de Fuerza Total
-  - Tasa de Paso
-  - Excursión de Pronación (mp -> to)
-  - Impacto GS
-  - Ratio de Contacto
-  - Velocidad Máxima de Pronación
-  - Potencia
-  - Excursión de Apoyo (fs -> mp)
-  - Rigidez Vertical del Resorte
-  - Fuerza de Frenado GS
-  - Peso
-  - Excursión de Pronación
-  - Tipo de Golpe de Pie
-  - Excursión de Apoyo (mp -> to)
-  - Ritmo
-  - Longitud de Paso
-  - Altura
-  - Tasa de GRF Vertical
-  - Edad
-  - Ángulo de Zancada
-  - Tamaño de Zapato
-  - Impacto
-  - Velocidad
-  - Torsión Femoral Externa (TFE)
-  - FPI Total (Postura Dorsal del Pie)
-  - Hallux Limitus (HL)
-  - Prueba de Thomas para TFL
-  - Genu Recurvatum
-  - Prueba de Jack (No Reconstruido)
+- **Antropometría**: IMC, altura, peso, edad, talla de calzado
+- **Cinemática y dinámica**: step rate, pace, velocidad, step length, stride angle, power, pronation excursion, vertical GRF rate, vertical spring stiffness, contact ratio, impacto GS
+- **Tipo de pisada**: footstrike type, braking GS, shock
+- **Variables clínicas**: Torsión Femoral Externa, Foot Posture Index (FPI), Hallux Limitus, prueba de Jack, prueba de Thomas, genu recurvatum
 
-## Nota sobre los Archivos de Datos
+## Consideraciones Éticas y Confidenciales
 
-Los archivos de la carpeta `data`, que incluyen el conjunto de datos `dataset_run.csv` y otros archivos relacionados, no han sido subidos a este repositorio debido a que contienen información propietaria del equipo de investigación de la Universidad San Jorge de Zaragoza (España). Estos datos son confidenciales y pertenecen a un proyecto de investigación en curso, por lo que no pueden ser compartidos públicamente.
+Por razones de confidencialidad y protección de datos, los archivos del conjunto de datos (`dataset_run.csv` y asociados) no están disponibles públicamente. Los datos utilizados pertenecen al equipo de investigación de la **Universidad San Jorge de Zaragoza**, y forman parte de un estudio clínico en curso.
 
-Si tienes interés en acceder a los datos o en colaborar con el equipo de investigación, te recomendamos ponerte en contacto directamente con la [Universidad San Jorge](https://www.usj.es/) para más información.
+Para más información o interés en colaboración científica, se recomienda contactar directamente con la institución: [www.usj.es](https://www.usj.es/).
