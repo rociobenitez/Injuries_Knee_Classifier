@@ -6,7 +6,7 @@ Este proyecto representa la **segunda fase** de un sistema predictivo aplicado a
 
 Tras evaluar múltiples algoritmos, el modelo **Random Forest** fue seleccionado por su robustez, interpretabilidad y rendimiento general, optimizado mediante **GridSearchCV** con validación cruzada.
 
-Este trabajo surge como evolución de la investigación inicial [presentada en el **11º Congreso Conjunto AEA-SEROD**](/src/pdf/240626-aea-serod2024-certificado-ponente-medico.pdf) (Barcelona), donde se abordó el riesgo global de lesiones musculoesqueléticas. En esta fase, el foco se centra exclusivamente en lesiones de rodilla, destacando la **aplicación práctica de la inteligencia artificial en biomecánica**.
+Este trabajo surge como evolución de la investigación inicial presentada en el **11º Congreso Conjunto AEA-SEROD** (Barcelona) _([ver certificado](/src/pdf/240626-aea-serod2024-certificado-ponente-medico.pdf))_, donde se abordó el riesgo global de lesiones musculoesqueléticas. En esta fase, el foco se centra exclusivamente en lesiones de rodilla, destacando la **aplicación práctica de la inteligencia artificial en biomecánica**.
 
 ## Contexto del Proyecto
 
@@ -49,11 +49,6 @@ El modelo final fue optimizado mediante **GridSearchCV**, empleando validación 
 | Lesión de rodilla     | 0.72      | 0.76   | 0.74     |
 
 ### Matriz de Confusión:
-
-- Predicciones correctas para sin lesión de rodilla: 12
-- Predicciones incorrectas para sin lesión de rodilla: 5
-- Predicciones correctas para lesión de rodilla: 12
-- Predicciones incorrectas para lesión de rodilla: 5
 
 ![Matriz de Confusión](src/img/matriz-confusion-randomforestclassifier.png)
 ![Matriz Normalizada](src/img/matriz-normalizada-randomforestclassifier.png)
